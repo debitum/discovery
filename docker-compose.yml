@@ -1,0 +1,9 @@
+discovery-service:
+  build: .
+  container_name: discovery-service
+  log_driver: "json-file"
+  log_opt:
+    max-size: "20m"
+    max-file: "10"
+  ports:
+   - "8761:8761"

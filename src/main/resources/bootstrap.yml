@@ -1,0 +1,20 @@
+spring:
+  application.name: discovery
+  profiles.active: local
+  cloud:
+    config:
+       failFast: true
+       uri:  http://config-service:8888
+       retry:
+          initialInterval: 2000
+          multiplier: 2
+          maxAttempts: 20
+          maxInterval: 16000
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
